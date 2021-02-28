@@ -28,56 +28,10 @@
         <p> Number of Photos: <span class="mx-2 text-lg">{{ countPhotos }}</span></p>
       </div>
       
-      <photo-search></photo-search>
+      <photo-search @keyup-search="filterPhotos"></photo-search>
       <photo-view @close-photo="closePhoto"></photo-view>
       <photo-item :photos="photos" @click-favor="favor" @click-photo="displayPhoto"></photo-item>
      
-      <!-- <div v-if="searchBoxIsShow" class="my-2">
-        <input type="text" v-model="inputSearch"
-          placeholder="Please enter text for searching photos"
-          class="p-2 bg-white text-black rounded flex-1 h-10 w-4/12 border-2 border-pink-200">
-        <button @click="clickCancelBtn" class="bg-pink-400 text-white px-6 h-10 rounded mx-2">Cancel</button>
-      </div>
-
-      <div v-else-if="isPhoto" class="bg-black">
-        <div class="">
-          <div @click="closePhoto" class="flex justify-end mt-2 mr-2">
-            <i class="material-icons fill-current text-white cursor-pointer text-4xl">close</i>
-          </div>
-          <div class="flex justify-center items-center p-10">
-            <img :src="currentPhoto.src" :alt="currentPhoto.title"
-              class="w-60 h-80 object-cover rounded-lg ring ring-offset-white ring-offset-4">
-          </div>
-        </div>
-      </div>
-
-      <div v-else class="flex item-center my-2 h-10">
-        <button @click="clickSearchIcon">
-          <i class="material-icons">search</i>
-        </button>
-      </div>
-
-      <div class="m-5">
-        <ul class="grid grid-cols-2 gap-y-10 ml-10 lg:grid-cols-5">
-          <li v-if="filterPhotos.length !== 0" v-for="(photo,index) in filterPhotos">
-            <p class="text-lg font-semibold">{{ photo.title }}</p>
-            <img :src="photo.src" class="h-48 w-32" :alt="photo.title" @click="displayPhoto(photo.number)"
-              @dblclick="favor(index)">
-
-            <div class="flex flex-row justify-start space-x-1">
-              <p v-if="photo.like > 0"> {{ photo.like }}<span> like</span></p>
-              <button @click="favor(index)">
-                <i v-if="1 > photo.like" class="material-icons stroke-current text-black">favorite_border</i>
-                <i v-else class="material-icons fill-current text-red-500">favorite</i>
-              </button>
-            </div>
-          </li>
-          <div v-else>
-            <p>{{ noPhoto }}</p>
-          </div>    
-        </ul>
-      </div> -->
-
     </div>
   </div>
 

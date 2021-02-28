@@ -10,7 +10,7 @@ app.component('photo-item',{
             require: true
         },
         inputSearch: String,
-        number: Number
+        number: Number,
     },
     
     /*html*/
@@ -48,9 +48,6 @@ app.component('photo-item',{
     },
     computed: {
         filterPhotos() {
-            if (this.inputSearch) {
-                return this.photos.filter(p => p.title.toLowerCase().includes(this.inputSearch.toLowerCase()))
-            }
             return this.photos
         }
     }

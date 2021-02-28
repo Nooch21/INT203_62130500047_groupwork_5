@@ -71,9 +71,9 @@ const app = Vue.createApp({
         //     this.inputSearch = ''
         // },
         displayPhoto(number) {
-            // this.searchBoxIsShow = false
-            // this.isPhoto = true
-            this.currentPhoto = this.photos.filter(p => p.number == number)[0]
+            this.searchBoxIsShow = false
+            this.isPhoto = true
+            // this.currentPhoto = this.photos.filter(p => p.number == number)[0]
         },
         closePhoto() {
             // this.isPhoto = false
@@ -86,12 +86,12 @@ const app = Vue.createApp({
         countPhotos() {
             return this.photos.length
         },
-        // filterPhotos() {
-        //     if (this.inputSearch) {
-        //         return this.photos.filter(p => p.title.toLowerCase().includes(this.inputSearch.toLowerCase()))
-        //     }
-        //     return this.photos
-        // }
+        filterPhotos() {
+            if (this.inputSearch) {
+                return this.photos.filter(p => p.title.toLowerCase().includes(this.inputSearch.toLowerCase()))
+            }
+            return this.photos
+        }
     }
 })
 // app.mount('#app')

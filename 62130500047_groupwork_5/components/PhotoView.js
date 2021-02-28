@@ -7,6 +7,10 @@ app.component('photo-view', {
         }
     },
     props: {
+        photos: {
+            type: Array,
+            require: true
+        },
         isPhoto: Boolean,
         currentPhoto: String,
         searchBoxIsShow: Boolean,
