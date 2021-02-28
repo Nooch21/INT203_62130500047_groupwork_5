@@ -40,7 +40,7 @@ app.component('photo-item',{
     `,
     methods: {
         favor(index) {
-            this.$emit('click-favor',index)
+            this.$emit('click-favor', index)
         },
         clickPhoto(number) {
             this.$emit('click-photo', number)

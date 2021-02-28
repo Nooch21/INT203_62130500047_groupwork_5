@@ -3,7 +3,6 @@ app.component('photo-view', {
         return {
             isPhoto: false,
             currentPhoto: '',
-            searchBoxIsShow: false,
         }
     },
     props: {
@@ -13,7 +12,6 @@ app.component('photo-view', {
         },
         isPhoto: Boolean,
         currentPhoto: String,
-        searchBoxIsShow: Boolean,
     },
     /*html*/
     template: 
@@ -31,11 +29,6 @@ app.component('photo-view', {
     </div>
     `,
     methods: {
-        // displayPhoto(number) {
-        //     this.$emit('display-photo', number)
-        //     this.searchBoxIsShow = false
-        //     this.isPhoto = true
-        // },
         closePhoto() {
             this.$emit('close-photo')
             this.isPhoto = false
