@@ -27,12 +27,16 @@
       <div class="flex items-center justify-start bg-black px-2 h-10 text-white">
         <p> Number of Photos: <span class="mx-2 text-lg">{{ countPhotos }}</span></p>
       </div>
-
-      <div v-if="searchBoxIsShow" class="my-2">
-        <input type="text" v-model="inputSearch" @keyup.enter="searchPhoto()"
+      
+      <photo-search></photo-search>
+      <photo-view @close-photo="closePhoto"></photo-view>
+      <photo-item :photos="photos" @click-favor="favor" @click-photo="displayPhoto"></photo-item>
+     
+      <!-- <div v-if="searchBoxIsShow" class="my-2">
+        <input type="text" v-model="inputSearch"
           placeholder="Please enter text for searching photos"
           class="p-2 bg-white text-black rounded flex-1 h-10 w-4/12 border-2 border-pink-200">
-        <button @click="clickCancelBtn(index)" class="bg-pink-400 text-white px-6 h-10 rounded mx-2">Cancel</button>
+        <button @click="clickCancelBtn" class="bg-pink-400 text-white px-6 h-10 rounded mx-2">Cancel</button>
       </div>
 
       <div v-else-if="isPhoto" class="bg-black">
@@ -72,15 +76,20 @@
             <p>{{ noPhoto }}</p>
           </div>    
         </ul>
-      </div>
+      </div> -->
 
     </div>
   </div>
+
   <!-- my main.js -->
   <script src="./main.js"></script>
   <script src="./components/PhotoItem.js"></script>
   <script src="./components/PhotoSearch.js"></script>
   <script src="./components/PhotoView.js"></script>
+
+  <script>
+    const mountedApp = app.mount('#app')
+  </script>
 </body>
 
 </html>
