@@ -6,6 +6,10 @@ app.component('photo-search', {
         }
     },
     props: {
+        photos: {
+            type: Array,
+            require: true
+        },
         searchBoxIsShow: Boolean,
         inputSearch: String
     },
@@ -13,7 +17,7 @@ app.component('photo-search', {
     template:
         `
     <div v-if="searchBoxIsShow" class="my-2">
-        <input type="text" v-model="inputSearch" @keyup="search"
+        <input type="text" v-model="inputSearch" @keyup="search(inputSearch)"
           placeholder="Please enter text for searching photos"
           class="p-2 bg-white text-black rounded flex-1 h-10 w-4/12 border-2 border-pink-200">
         <button @click="clickCancelBtn" class="bg-pink-400 text-white px-6 h-10 rounded mx-2">Cancel</button>
@@ -37,8 +41,8 @@ app.component('photo-search', {
             this.searchBoxIsShow = false;
             this.inputSearch = ''
         },
-        search() {
-            this.$emit('keyup-search')
+        search(inputSearch) {
+            this.$emit("keyup-search", inputSearch)
         }
     },
     

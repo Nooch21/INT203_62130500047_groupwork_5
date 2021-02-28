@@ -73,7 +73,7 @@ const app = Vue.createApp({
         displayPhoto(number) {
             this.searchBoxIsShow = false
             this.isPhoto = true
-            // this.currentPhoto = this.photos.filter(p => p.number == number)[0]
+            this.currentPhoto = this.photos.filter(p => p.number == number)[0]
         },
         closePhoto() {
             // this.isPhoto = false
